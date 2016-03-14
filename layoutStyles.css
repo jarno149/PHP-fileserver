@@ -1,0 +1,110 @@
+body{
+    min-width: 550px;
+}
+
+table{
+    width: 100%;
+    margin-top: 20px;
+}
+			
+.fileselect{
+        width: 20px;
+}
+
+.filename{
+        background-color: #00AAFF;
+
+}
+
+.filetype{
+        width: 50px;
+        background-color: #FF7F24;
+}
+
+.filesize{
+        width: 50px;
+        background-color: #3AD92B;
+}
+
+tr{
+        height: 25px;
+        width: 100%;
+}
+
+td{
+        transition: background 0.5s;
+        color: white;
+}
+
+td.filename, td.filetype, td.filesize{
+        box-shadow: 5px 5px 10px #888888;
+}
+
+td.filename:hover, td.filetype:hover, td.filesize:hover, #delete:hover,
+        #upload:hover, #download:hover, #back:hover{
+        background-color: #595959;
+        box-shadow: 2px 2px 5px #888888;
+}
+
+p{
+        margin-left: 5px;
+        cursor:default;
+        -webkit-user-select: none;
+}
+
+header{
+        height: 80px;
+        background-color: #d6d6d6;
+        box-shadow: 5px 5px 10px #888888;
+        border-radius: 20px;
+}
+
+#delete, #upload, #download, #back{
+        height: 50px;
+        width: 50px;
+        background-size: 40px 40px;
+        background-position: center, center;
+        background-repeat: no-repeat;
+        float: right;
+        margin-top: 15px;
+        margin-right: 15px;
+        transition: background 0.5s;
+        box-shadow: 5px 5px 10px #888888;
+}
+
+#selectall{
+        margin-top: 34px;
+        margin-left: 20px;
+        float: left;
+}
+
+#fileUpload{
+    float: left;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+#back{
+    background-image: url("images/backico.png");
+    background-color: #ccff66;
+}
+
+#delete{
+        background-image: url("images/deleteico.png");
+        background-color: #FF7F24;
+}
+
+#upload{
+        background-image: url("images/uploadico.png");
+        background-color: #00AAFF;
+}
+
+#download{
+        background-image: url("images/downloadico.png");
+        background-color: #3AD92B;
+}
+
+input[type=checkbox]{
+        transform: scale(1.6);
+        -webkit-transform: scale(1.6);
+}
