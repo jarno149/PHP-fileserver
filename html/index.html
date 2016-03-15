@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>PHP-rojekti</title>
+		<script>
+		function goToFolder(folder){
+			document.getElementById("folder").setAttribute("value",folder);
+			document.forms[openfolder].submit();
+		}
+		function goHome(){
+			//lisää tähän oikeat osoitteet sitten joskus
+			document.getElementById("inner").src = "http://muropaketti.com";
+		}
+		function goPublic(){
+			//lisää tähän oikeat osoitteet sitten joskus
+			document.getElementById("inner").src = "http://dome.fi";
+		}
+		function logOut(){
+			//lisää tähän oikeat osoitteet sitten joskus
+			document.getElementById("inner").src = "http://ampparit.fi";
+		}
+		function getHelp(){
+			//lisää tähän oikeat osoitteet sitten joskus
+			document.getElementById("inner").src = "http://chickenonaraft.com";
+		}
+		function horizontalChecker(){
+			var w = window.innerWidth;
+			var h = window.innerHeight;
+			var txt = "";
+			if (h > w) 
+			{
+				txt = "Mobile device";
+				document.getElementById("sivupalkki").style.display = 'none';
+				document.getElementById("mobiilipalkki").style.display = 'flex';
+				document.getElementById("inner").style.width = '98%';
+				document.getElementById("inner").style.marginRight = '0px';
+				document.getElementById("sivupalkki").style.width = '0%';
+				document.getElementById("inner").style.right = '1%';
+			
+			}
+			else
+			{
+				txt = "Desktop device";
+				document.getElementById("sivupalkki").style.display = 'block';
+				document.getElementById("mobiilipalkki").style.display = 'none';
+				document.getElementById("sivupalkki").style.width = '22%';
+				document.getElementById("inner").style.marginRight = '11px';
+				document.getElementById("inner").style.width = '76%';
+				document.getElementById("inner").style.right = '0';
+			}
+		}
+		
+		</script>
+        <style>
+        	
+        	#ylapalkki
+        	{
+        		width: 100%;
+        		height: 15%;
+        		border: 12px;
+        		border-style: solid;
+        		border-color: black;
+        		text-align: center;
+        		background-color: white;
+        		border-top-left-radius: 32px;
+        		border-top-right-radius: 32px;
+        		box-sizing: border-box;
+        		
+        	}
+        	#sivupalkki
+        	{
+        		min-width: 20%;
+        		position: absolute;
+				background-color: white;
+        		border-width: 12px;
+        		border-style: solid;
+        		border-color: black;
+          		height: 80%;
+          		box-sizing: border-box;
+        	}
+        	h2
+        	{
+        		width: 25%;
+        		text-align: center;
+        		cursor: pointer;
+        	}
+        	#mobiilipalkki
+        	{
+        		display: flex;
+        		width: 100%;
+				background-color: white;
+        		border-width: 12px;
+        		border-style: solid;
+        		border-color: black;
+        		border-bottom-width: 0px;
+          		height: 20%;
+          		box-sizing: border-box;
+        	}
+        	h3
+        	{
+        		text-align: center;
+        		font-size: 30px;
+        		font-family: "Impact", Charcoal, sans-serif;
+        		padding-top: 10px;
+        		padding-bottom: 10px;
+        		cursor: pointer;
+        	}
+        	h3:hover
+        	{
+        		background-color: black;
+        		color: white;	
+        	}
+        	h2:hover
+        	{
+        		background-color: black;
+        		color: white;	
+        	}
+        	#inner
+        	{
+        		
+        		background-color: white;
+        		position: absolute;
+        		right: 1%;
+        		height: 80%;
+        		width: 80%; 
+        		border-width: 12px;
+        		border-style: solid;
+        		border-color: black;
+        		box-sizing: border-box;
+        	}
+        </style>
+    </head>
+    <body onload="horizontalChecker()" onresize="horizontalChecker()">
+        <h1 id="ylapalkki">FILE TRANSFER V0.1</h1>
+        <div id="mobiilipalkki">
+        	<h2 onclick="goToFolder()">OMA</h3>
+       		<h2 onclick="goPublic()">JULKINEN</h3>
+        	<h2 onclick="logOut()">ULOS</h3>
+        	<h2 onclick="getHelp()">OHJE</h3>
+        </div>
+        <div id="sivupalkki">
+       		<h3 onclick="goHome()">OMA KANSIO</h3>
+       		<h3 onclick="goPublic()">JULKINEN</h3>
+        	<h3 onclick="logOut()">KIRJAUDU ULOS</h3>
+        	<h3 onclick="getHelp()">OHJEET</h3>
+        </div>
+        <iframe id="inner" src="http://cdn.meme.am/instances/56093555.jpg">
+        </iframe>
+        <form id="openfolder" method="POST"><input type="hidden" value="" id="folder" name="folder"/></form>
+    </body>
+</html>
